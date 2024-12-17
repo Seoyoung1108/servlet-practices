@@ -4,7 +4,8 @@
     pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
-
+	
+	// DB에 insert / 응답 고려하기
 	String firstName = request.getParameter("fn");
 	String lastName = request.getParameter("ln");
 	String email = request.getParameter("email");
@@ -16,20 +17,6 @@
 	
 	EmaillistDao dao= new EmaillistDao();
 	dao.insert(vo);
+	
+	response.sendRedirect("/emaillist01");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<!-- DB에 insert / 응답 고려하기 -->
-<body>
-	<%=firstName %>
-	<br>
-	<%=lastName %>
-	<br>
-	<%=email %>
-	<br>
-</body>
-</html>
