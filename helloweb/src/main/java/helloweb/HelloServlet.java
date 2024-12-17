@@ -13,9 +13,13 @@ public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String no = request.getParameter("no");
+		
+		System.out.println(id+":"+no);
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter(); // 빈 개행도 보냄. 이제 body 내용 적기
-		out.print("<h1>Hello World</h1>");
+		out.print("<h1>Hello "+id+"</h1>");
 		
 		
 	}
