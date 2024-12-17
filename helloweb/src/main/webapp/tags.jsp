@@ -31,6 +31,15 @@
 			<th>마이콜</th>
 		</tr>
 	</table>
+	
+	<img src="http://localhost:8080/helloweb/images/photo_1.JPG" style="width:100px">
 	<img src="/helloweb/images/photo_1.JPG" style="width:100px">
+	<img src="images/photo_1.JPG" style="width:100px">
+	
+	<p>
+		문장입니다.
+		문장입니다.
+		문장입니다.
+	</p>
 </body>
 </html>
