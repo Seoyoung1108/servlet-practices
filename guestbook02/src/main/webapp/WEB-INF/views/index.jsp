@@ -14,7 +14,7 @@
 </head>
 <body>
 	<form action="/guestbook02/gb" method="post">
-		<input type="hidden" name="a" value="insert" >
+		<input type="hidden" name="a" value="add" >
 		<table border=1>
 			<tr>
 				<td>이름</td>
@@ -36,18 +36,20 @@
 	</form>
 	
 	<%
+		int count = list.size();
+		int index = 0;
 		for(GuestbookVo vo: list){
 	%>
 		<br>
 		<table width=510 border=1>
 			<tr>
-				<td>[<%=vo.getId() %>]</td>
+				<td>[<%=count-index++ %>]</td>
 				<td><%=vo.getName() %></td>
 				<td><%=vo.getRegDate() %></td>
-				<td><a href="">삭제</a></td>
+				<td><a href="/guestbook02/gb?a=deleteform&id=<%=vo.getId() %>">삭제</a></td>
 			</tr>
 			<tr>
-				<td colspan=4><%=vo.getContents() %></td>
+				<td colspan=4><%=vo.getContents().replaceAll("\n","<br>") %></td>
 			</tr>
 		</table>
 	<%
